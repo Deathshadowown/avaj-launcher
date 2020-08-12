@@ -10,4 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-package avaj-launcher.simulator;
+package simulator;
+
+import weather.Coordinates;
+import simulator.vehicles.Aircraft;
+
+public class Simulator{
+    public static void main(String[] args){
+        System.out.println("hello!!");
+        Aircraft aircraft = new Aircraft("shane", 5); // wont work stuff is protected
+        // aircraft.name = "Shane";
+        // System.out.println(aircraft.getName());
+    }
+}

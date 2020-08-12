@@ -10,4 +10,4 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-package avaj-launcher.simulator.vehicles;
+package simulator.vehicles;

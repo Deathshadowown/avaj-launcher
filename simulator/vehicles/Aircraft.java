@@ -10,20 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-package avaj-launcher.simulator.vehicles;
+package simulator.vehicles;
+
+import weather.Coordinates;
 
 public class Aircraft{
     private static long count = 0;
     protected long id;
     protected String name;
-    protected coordinates:Coordinates
+    protected Coordinates coordinates;
 
-    protected Aircraft(name : String, coordinates : Coordinates){
+    public Aircraft(String name, Coordinates coordinates){//, Coordinates coordinates
         this.name = name;
-        this.coordinates = coordinates:Coordinates;
+        this.coordinates = coordinates;
     }
     
-    private nextld(){
+    private long nextld(){
         id = ++count;
+        return this.id;
     }
 }
