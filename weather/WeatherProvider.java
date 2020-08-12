@@ -10,4 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-package avaj-launcher.weather;
+package weather;
+
+import weather.Coordinates;
+
+public class WeatherProvider{
+    private static weatherProvider = new WeatherProvider();
+    private static String[] = weather{"RAIN", "FOG", "SUN", "SNOW"};
+
+    private WeatherProvider(){
+
+    }
+
+    public static WeatherProvider getProvider()
+    {
+        return weatherProvider;
+    }
+
+    public static String getCurrentWeather(Coordinates coordinates){
+        
+    }
+}
