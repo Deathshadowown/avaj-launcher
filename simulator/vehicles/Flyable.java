@@ -10,4 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-package avaj-launcher.simulator.vehicles;
+package simulator.vehicles;
+
+import weather.WeatherProvider;
+
+public class Flyable{
+    public void updateConditions(){ // check what to do here
+
+    }
+    public void registerTower( WeatherProvider weatherProvider){ // check what to do here
+        this.weatherProvider;
+    }
+}

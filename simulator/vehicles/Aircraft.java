@@ -15,10 +15,10 @@ package simulator.vehicles;
 import weather.Coordinates;
 
 public class Aircraft{
-    private static long count = 0;
     protected long id;
     protected String name;
     protected Coordinates coordinates;
+    private static long idCounter = 0;
 
     public Aircraft(String name, Coordinates coordinates){//, Coordinates coordinates
         this.name = name;
@@ -26,7 +26,7 @@ public class Aircraft{
     }
     
     private long nextld(){
-        id = ++count;
+        id = ++idCounter;
         return this.id;
     }
 }

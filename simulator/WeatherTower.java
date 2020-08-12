@@ -10,4 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-package avaj-launcher.simulator;
+package simulator;
+
+import weather.Coordinates;
+
+public class WeatherTower{
+    public String getWeather(Coordinates coordinates)
+    {
+        return coordinates;
+    }
+
+    private void changeWeather(){
+        
+    }
+}
