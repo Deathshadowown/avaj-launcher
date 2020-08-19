@@ -14,6 +14,7 @@ package simulator.vehicles;
 
 import weather.Coordinates;
 
+//must be made abstract class
 public class Aircraft{
     protected long id;
     protected String name;
@@ -21,12 +22,13 @@ public class Aircraft{
     private static long idCounter = 0;
 
     public Aircraft(String name, Coordinates coordinates){//, Coordinates coordinates
+        id = idCounter;
         this.name = name;
         this.coordinates = coordinates;
     }
-    
+
     private long nextld(){
-        id = ++idCounter;
+        ++idCounter;
         return this.id;
     }
 }

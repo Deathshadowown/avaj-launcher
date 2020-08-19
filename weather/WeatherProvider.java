@@ -15,19 +15,29 @@ package weather;
 import weather.Coordinates;
 
 public class WeatherProvider{
-    private static weatherProvider = new WeatherProvider();
-    private static String[] = weather{"RAIN", "FOG", "SUN", "SNOW"};
+    private static WeatherProvider weatherProvider = new WeatherProvider(); // make sure its set back to private
+    private static String[] weather = {"RAIN", "FOG", "SUN", "SNOW"};
 
-    private WeatherProvider(){
-
+    public WeatherProvider(){
     }
 
-    public static WeatherProvider getProvider()
+    public static WeatherProvider getProvider() // make sure its set back to private
     {
+        // weatherProvider = new WeatherProvider();
         return weatherProvider;
     }
 
-    public static String getCurrentWeather(Coordinates coordinates){
+    public String getCurrentWeather(Coordinates coordinates){
+        int height = coordinates.getHeight();
         
+        if (height <= 100 && height >= 75)
+        return (weather[0]);
+        else if (height <= 74 && height >= 50)
+        return (weather[1]);
+        else if (height <= 49 && height >= 25)
+        return (weather[2]);
+        else if (height <= 24 && height >= 1) // chance to 0 maybe 0 means the ship must land
+        return (weather[3]);
+        return ("could not find weather"); // what must it do if it does not find anything
     }
 }

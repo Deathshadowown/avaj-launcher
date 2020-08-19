@@ -12,13 +12,13 @@
 
 package simulator.vehicles;
 
-import weather.WeatherProvider;
+import simulator.WeatherTower;
 
 public class Flyable{
     public void updateConditions(){ // check what to do here
 
     }
-    public void registerTower( WeatherProvider weatherProvider){ // check what to do here
-        this.weatherProvider;
+    public void registerTower( WeatherTower weatherTower){ // check what to do here
+        this.weatherTower;
     }
 }

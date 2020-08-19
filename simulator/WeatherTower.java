@@ -12,12 +12,18 @@
 
 package simulator;
 
-import weather.Coordinates;
+import weather.*;
 
-public class WeatherTower{
-    public String getWeather(Coordinates coordinates)
+public class WeatherTower{ 
+    // get weather is going to be useing the WeatherProvider;
+    public String getWeather(Coordinates coordinates) // what string does this return is it the weather type of the cor?
     {
-        return coordinates;
+        System.out.println("inside getweather");
+        System.out.println(coordinates.getHeight());
+        String fullString;
+        fullString = coordinates.getLongitude() + " " + coordinates.getLatitude() + " " + coordinates.getHeight();
+        // String toString();
+        return fullString;
     }
 
     private void changeWeather(){
