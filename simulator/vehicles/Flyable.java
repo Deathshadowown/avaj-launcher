@@ -16,7 +16,7 @@ import simulator.WeatherTower;
 
 public class Flyable{
     public void updateConditions(){ // check what to do here
-
+        
     }
     public void registerTower( WeatherTower weatherTower){ // check what to do here
         this.weatherTower;

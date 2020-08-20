@@ -16,14 +16,16 @@ import weather.Coordinates;
 import simulator.vehicles.Aircraft;
 import simulator.WeatherTower;
 import weather.WeatherProvider;
+import simulator.vehicles.Ballon;
 
 public class Simulator{
     public static void main(String[] args){
         System.out.println("hello!!");
-        Coordinates cor1 = new Coordinates(6,4,0);
+        Coordinates cor1 = new Coordinates(6,4,76);
         Aircraft aircraft = new Aircraft("shane", cor1); // wont work stuff is protected
         WeatherProvider weatherProvider = new WeatherProvider();
         WeatherTower weather = new WeatherTower();
+        Ballon ballon = new Ballon("shane", cor1);
         // System.out.println(cor1.longitude);
         int l;
         int lat;
@@ -51,5 +53,7 @@ public class Simulator{
         // System.out.println(aircraft.getName());
         System.out.println(weatherProvider.getProvider() + " yolo");
         System.out.println(weatherProvider.getCurrentWeather(cor1));
+        // System.out.println(ballon.updateConditions()); // protected in aircraft will have to make name public to see it work // make updateconditions as String and return NULL to test
+        
     }
 }

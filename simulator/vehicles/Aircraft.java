@@ -21,7 +21,7 @@ public class Aircraft{
     protected Coordinates coordinates;
     private static long idCounter = 0;
 
-    public Aircraft(String name, Coordinates coordinates){//, Coordinates coordinates
+    public Aircraft(String name, Coordinates coordinates){//, Coordinates coordinates // must be made protected at the end its public for testing
         id = idCounter;
         this.name = name;
         this.coordinates = coordinates;
@@ -29,6 +29,6 @@ public class Aircraft{
 
     private long nextld(){
         ++idCounter;
-        return this.id;
+        return idCounter;
     }
 }

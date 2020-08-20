@@ -12,20 +12,20 @@
 
 package simulator;
 
-import simulator.vechicles.Flyable;
+// import simulator.vechicles.Flyable;
 
 public class Tower{
-    private Flyable observers
+    // private Flyable observers
 
-    public void register(Flyable flyable){
+    // public void register(Flyable flyable){
 
-    }
+    // }
 
-    public void unregister(Flyable flyable){
+    // public void unregister(Flyable flyable){
 
-    }
+    // }
 
-    protected void conditionsChanged(){
+    // protected void conditionsChanged(){
         
-    }
+    // }
 }
