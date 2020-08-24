@@ -23,13 +23,15 @@ public class WeatherProvider{
 
     public static WeatherProvider getProvider() // make sure its set back to private
     {
-        // weatherProvider = new WeatherProvider();
         return weatherProvider;
     }
 
     public String getCurrentWeather(Coordinates coordinates){
         int height = coordinates.getHeight();
-        
+        if (height > 100)
+        {
+            height = 100;
+        }
         if (height <= 100 && height >= 75)
         return (weather[0]);
         else if (height <= 74 && height >= 50)
