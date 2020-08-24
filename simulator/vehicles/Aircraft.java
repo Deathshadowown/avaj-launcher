@@ -21,13 +21,14 @@ public class Aircraft{
     protected Coordinates coordinates;
     private static long idCounter = 0;
 
-    public Aircraft(String name, Coordinates coordinates){//, Coordinates coordinates // must be made protected at the end its public for testing
-        id = idCounter;
+    protected Aircraft(String name, Coordinates coordinates){//, Coordinates coordinates // must be made protected at the end its public for testing
+        idCounter = nextId();
+        this.id = idCounter;
         this.name = name;
         this.coordinates = coordinates;
     }
 
-    private long nextld(){
+    private long nextId(){
         ++idCounter;
         return idCounter;
     }

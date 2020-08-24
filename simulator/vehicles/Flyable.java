@@ -14,11 +14,7 @@ package simulator.vehicles;
 
 import simulator.WeatherTower;
 
-public class Flyable{
-    public void updateConditions(){ // check what to do here
-        
-    }
-    public void registerTower( WeatherTower weatherTower){ // check what to do here
-        this.weatherTower;
-    }
+public interface Flyable{
+    public void updateConditions();
+    public void registerTower( WeatherTower weatherTower);
 }

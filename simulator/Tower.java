@@ -12,20 +12,27 @@
 
 package simulator;
 
-// import simulator.vechicles.Flyable;
+import simulator.vehicles.*;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.*;
 
 public class Tower{
-    // private Flyable observers
+    private CopyOnWriteArrayList<Flyable> observers = new CopyOnWriteArrayList<Flyable>();
+    
 
-    // public void register(Flyable flyable){
+    public void register(Flyable flyable){
+        observers.add(flyable);
+    }
 
-    // }
+    public void unregister(Flyable flyable){
+        observers.remove(flyable);
+    }
 
-    // public void unregister(Flyable flyable){
-
-    // }
-
-    // protected void conditionsChanged(){
-        
-    // }
+    protected void conditionsChanged(){
+        if (observers.size() >= 0) {
+			for (Flyable flyable : observers) {
+				flyable.updateConditions();
+			}
+		}
+    }
 }
