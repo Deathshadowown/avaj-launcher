@@ -17,46 +17,72 @@ import weather.Coordinates;
 
 
 public class Baloon extends Aircraft implements Flyable{
-    private WeatherTower weatherTower;
+    private WeatherTower weatherTower = new WeatherTower();
 
     public Baloon(String name, Coordinates coordinates){ // must this be public?
         super(name, coordinates); // useing the name and corrdinates from super class ie Aircraft
-        // this.name = name;
-        // this.coordinates = coordinates;
     }
 
     public void updateConditions(){ // what goes inside here?
+        
         String weather = this.weatherTower.getWeather(this.coordinates);
-        if (weather == "RAIN" && this.coordinates.getHeight() > 0)
+        Boolean thisCoordinatesTrue = this.coordinates.getHeight() > 0;
+        String baloonMessage = "Baloon#"+this.name+"("+this.id;
+        String landingMessage = "Baloon#"+this.name+"("+this.id+") landing."+ "\n"+"Tower says: Baloon#"+this.name+"("+this.id+") unregistered from weather tower.";
+        String rainMessage = ") Mayday mayday not looking good this rain is making it hard to control";
+        String fogMessage = ") Oh dear we in fog everyone start praying we dont hit a skyscraper!!";
+        String sunMessage = ") what a breeze today is going to be a great day nice and sunny!";
+        String snowMessage = ") This snow is making this hard to fly, hope we dont crash!";
+
+        switch(weather)
         {
-            this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 5);
-            System.out.println("Baloon#"+this.name+"("+this.id+") Mayday mayday not looking good this rain is making it hard to control");
-        }
-        else if (weather == "FOG" && this.coordinates.getHeight() > 0)
-        {
-            this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 3);
-            System.out.println("Baloon#"+this.name+"("+this.id+") Oh dear we in fog everyone start praying we dont hit a skyscraper!!");
-        }
-        else if (weather == "SUN"  && this.coordinates.getHeight() > 0)
-        {
-            this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() + 4);
-            System.out.println("Baloon#"+this.name+"("+this.id+") what a breeze today is going to be a great day nice and sunny!");
-        }
-        else if (weather == "SNOW" && this.coordinates.getHeight() > 0)
-        {
-            this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 15);
-            System.out.println("Baloon#"+this.name+"("+this.id+") This snow is making this hard to fly hope we dont crash!");
+            case "RAIN":
+            {
+                if (thisCoordinatesTrue)
+                {
+                this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 5);
+                System.out.println(baloonMessage + rainMessage);
+                }
+                break;
+            }
+            case "FOG":
+            {
+                if (thisCoordinatesTrue)
+                {
+                this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 3);
+                System.out.println(baloonMessage + fogMessage);
+                }
+                break;
+            }
+            case "SUN":
+            {
+                if (thisCoordinatesTrue)
+                {
+                this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() + 4);
+                System.out.println(baloonMessage + sunMessage);
+                }
+                break;
+            }
+            case "SNOW":
+            {
+                if (thisCoordinatesTrue)
+                {
+                this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 15);
+                System.out.println(baloonMessage + snowMessage);
+                }
+                break;
+            }
         }
         if (this.coordinates.getHeight() <= 0)
         {
-            System.out.println("Baloon#"+this.name+"("+this.id+") landing.");
+            System.out.println(landingMessage);
             this.weatherTower.unregister(this);
-            System.out.println("Tower says: Baloon#"+this.name+"("+this.id+") unregistered from weather tower.");
         }
     }
 	public void registerTower(WeatherTower weatherTower) {
+        String registerToTowerMessage = "Tower says: Baloon#"+this.name+"("+this.id+") register to weather tower.";
 		this.weatherTower = weatherTower;
         this.weatherTower.register(this);
-        System.out.println("Tower says: Baloon#"+this.name+"("+this.id+") register to weather tower.");
+        System.out.println(registerToTowerMessage);
 	}
 }
