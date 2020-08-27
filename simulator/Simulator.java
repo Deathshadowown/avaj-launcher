@@ -27,7 +27,7 @@ public class Simulator {
 			boolean exists = file.exists();
 			if (!exists)
 			{
-				System.out.println("File Does not exist");
+				System.out.println("Error: Missing file " + arg[0]);
 				System.exit(2);
 			}
 			Scanner scan = new Scanner(file);
@@ -37,7 +37,7 @@ public class Simulator {
 			int count2 = 0;
 			int track = 0;
 			int passEmptySpace = 0;
-			int simulationss = 0;
+			int simulations = 0;
 			String[] fileInput;
 			while (scan.hasNextLine())
 			{
@@ -46,8 +46,8 @@ public class Simulator {
 				continue;
 				if (track == 0)
 				{
-					simulationss = Integer.parseInt(checkString);
-					if (simulationss <= 0)
+					simulations = Integer.parseInt(checkString);
+					if (simulations <= 0)
 					{
 						System.out.println("you cant have a negative or 0 as number");
 						System.exit(2);
@@ -82,7 +82,7 @@ public class Simulator {
 				for (Flyable flyable : flyables) {
 					flyable.registerTower(weatherTower);
 				}
-				for (int i = simulationss; i >= 1; i--) {
+				for (int i = simulations; i >= 1; i--) {
 					weatherTower.changeWeather();
 				}
 			} catch (FileNotFoundException e) {
