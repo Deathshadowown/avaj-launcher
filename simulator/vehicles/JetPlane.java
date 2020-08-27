@@ -18,44 +18,69 @@ import weather.Coordinates;
 public class JetPlane extends Aircraft implements Flyable{
     private WeatherTower weatherTower;
 
-    public JetPlane(String name, Coordinates coordinates){ // must this be public?
-        super(name, coordinates); // useing the name and corrdinates from super class ie Aircraft
-        // this.name = name;
-        // this.coordinates = coordinates;
+    public JetPlane(String name, Coordinates coordinates){
+        super(name, coordinates);
     }
-    public void updateConditions(){ // what goes inside here?
+    public void updateConditions(){
         String weather = this.weatherTower.getWeather(this.coordinates);
-        if (weather == "RAIN" && this.coordinates.getHeight() > 0)
+        Boolean thisCoordinatesTrue = this.coordinates.getHeight() > 0;
+        String JetPlaneMessage = "JetPlane#"+this.name+"("+this.id;
+        String landingMessage = "JetPlane#"+this.name+"("+this.id+") landing."+ "\n"+"Tower says: JetPlane#"+this.name+"("+this.id+") unregistered from weather tower.";
+        String rainMessage = ") A little bit of rain nevr bothered me, what's a whole lot going to do!";
+        String fogMessage = ") So what if there is fog i can fly high!";
+        String sunMessage = ") Sun this is amazing view to have!!";
+        String snowMessage = ") Oh no our Turbines could freeze up!";
+
+        switch(weather)
         {
-            this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude() + 5, this.coordinates.getHeight());
-            System.out.println("JetPlane#"+this.name+"("+this.id+") A little bit of rain nevr bothered me, what's a whole lot going to do!");
-        }
-        else if (weather == "FOG" && this.coordinates.getHeight() > 0)
-        {
-            this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude() + 1, this.coordinates.getHeight());
-            System.out.println("JetPlane#"+this.name+"("+this.id+") So what if there is fog i can fly high!");
-        }
-        else if (weather == "SUN" && this.coordinates.getHeight() > 0)
-        {
-            this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude() + 10, this.coordinates.getHeight() + 2);
-            System.out.println("JetPlane#"+this.name+"("+this.id+") Sun this is amazing view to have!!");
-        }
-        else if (weather == "SNOW" && this.coordinates.getHeight() > 0)
-        {
-            this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 7);
-            System.out.println("JetPlane#"+this.name+"("+this.id+") Oh no our Turbines could freeze up!");
+            case "RAIN":
+            {
+                if (thisCoordinatesTrue)
+                {
+                this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude() + 5, this.coordinates.getHeight());
+                System.out.println(JetPlaneMessage + rainMessage);
+                }
+                break;
+            }
+            case "FOG":
+            {
+                if (thisCoordinatesTrue)
+                {
+                this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude() + 1, this.coordinates.getHeight());
+                System.out.println(JetPlaneMessage + fogMessage);
+                }
+                break;
+            }
+            case "SUN":
+            {
+                if (thisCoordinatesTrue)
+                {
+                this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude() + 10, this.coordinates.getHeight() + 2);
+                System.out.println(JetPlaneMessage + sunMessage);
+                }
+                break;
+            }
+            case "SNOW":
+            {
+                if (thisCoordinatesTrue)
+                {
+                this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 7);
+                System.out.println(JetPlaneMessage + snowMessage);
+                }
+                break;
+            }
         }
         if (this.coordinates.getHeight() <= 0)
         {
-            System.out.println("JetPlane#"+this.name+"("+this.id+") landing.");
+            System.out.println(landingMessage);
             this.weatherTower.unregister(this);
-            System.out.println("Tower says: JetPlane#"+this.name+"("+this.id+") unregistered from weather tower.");
         }
     }
     
 	public void registerTower(WeatherTower weatherTower) {
+        String registerToTowerMessage = "Tower says: JetPlane#"+this.name+"("+this.id+") register to weather tower.";
 		this.weatherTower = weatherTower;
         this.weatherTower.register(this);
-        System.out.println("Tower says: JetPlane#"+this.name+"("+this.id+") register to weather tower.");
+        System.out.println(registerToTowerMessage);
 	}
 }

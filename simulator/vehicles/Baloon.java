@@ -19,12 +19,11 @@ import weather.Coordinates;
 public class Baloon extends Aircraft implements Flyable{
     private WeatherTower weatherTower = new WeatherTower();
 
-    public Baloon(String name, Coordinates coordinates){ // must this be public?
-        super(name, coordinates); // useing the name and corrdinates from super class ie Aircraft
+    public Baloon(String name, Coordinates coordinates){
+        super(name, coordinates);
     }
 
-    public void updateConditions(){ // what goes inside here?
-        
+    public void updateConditions(){
         String weather = this.weatherTower.getWeather(this.coordinates);
         Boolean thisCoordinatesTrue = this.coordinates.getHeight() > 0;
         String baloonMessage = "Baloon#"+this.name+"("+this.id;
