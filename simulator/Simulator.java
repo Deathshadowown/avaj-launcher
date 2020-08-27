@@ -20,13 +20,16 @@ import simulator.vehicles.*;
 public class Simulator {
 	private static WeatherTower weatherTower = new WeatherTower();
 	private static List<Flyable> flyables = new ArrayList<Flyable>();
-//InterruptedException
-//throw new ExceptionA("I am Exception Alpha!");
 	public static void main(String[] arg) throws FileNotFoundException {
 		if (arg.length > 1)
 			throw new FileNotFoundException();
-			// reading from file-----------------------------------------------------------------------------------------------------
 			File file = new File(arg[0]);
+			boolean exists = file.exists();
+			if (!exists)
+			{
+				System.out.println("File Does not exist");
+				System.exit(2);
+			}
 			Scanner scan = new Scanner(file);
 		try {
 			int count = 0;
