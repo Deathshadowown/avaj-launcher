@@ -87,6 +87,8 @@ public class Simulator {
 				}
 			} catch (FileNotFoundException e) {
 				System.out.println("Error: Missing file " + arg[0]);
+			} catch (NumberFormatException e) {
+				System.out.println("Height, lat and long must be a number base please");
 			}
 	}
 }
