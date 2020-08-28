@@ -21,7 +21,7 @@ public class WeatherProvider{
     public WeatherProvider(){
     }
 
-    public static WeatherProvider getProvider() // make sure its set back to private
+    public static WeatherProvider getProvider()
     {
         return weatherProvider;
     }

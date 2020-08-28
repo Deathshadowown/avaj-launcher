@@ -14,6 +14,7 @@ package simulator.vehicles;
 
 import simulator.WeatherTower;
 import weather.Coordinates;
+import simulator.Simulator;
 
 public class JetPlane extends Aircraft implements Flyable{
     private WeatherTower weatherTower;
@@ -38,7 +39,7 @@ public class JetPlane extends Aircraft implements Flyable{
                 if (thisCoordinatesTrue)
                 {
                 this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude() + 5, this.coordinates.getHeight());
-                System.out.println(JetPlaneMessage + rainMessage);
+                Simulator.printwriter.println(JetPlaneMessage + rainMessage);
                 }
                 break;
             }
@@ -47,7 +48,7 @@ public class JetPlane extends Aircraft implements Flyable{
                 if (thisCoordinatesTrue)
                 {
                 this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude() + 1, this.coordinates.getHeight());
-                System.out.println(JetPlaneMessage + fogMessage);
+                Simulator.printwriter.println(JetPlaneMessage + fogMessage);
                 }
                 break;
             }
@@ -56,7 +57,7 @@ public class JetPlane extends Aircraft implements Flyable{
                 if (thisCoordinatesTrue)
                 {
                 this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude() + 10, this.coordinates.getHeight() + 2);
-                System.out.println(JetPlaneMessage + sunMessage);
+                Simulator.printwriter.println(JetPlaneMessage + sunMessage);
                 }
                 break;
             }
@@ -65,14 +66,14 @@ public class JetPlane extends Aircraft implements Flyable{
                 if (thisCoordinatesTrue)
                 {
                 this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 7);
-                System.out.println(JetPlaneMessage + snowMessage);
+                Simulator.printwriter.println(JetPlaneMessage + snowMessage);
                 }
                 break;
             }
         }
         if (this.coordinates.getHeight() <= 0)
         {
-            System.out.println(landingMessage);
+            Simulator.printwriter.println(landingMessage);
             this.weatherTower.unregister(this);
         }
     }
@@ -81,6 +82,6 @@ public class JetPlane extends Aircraft implements Flyable{
         String registerToTowerMessage = "Tower says: JetPlane#"+this.name+"("+this.id+") register to weather tower.";
 		this.weatherTower = weatherTower;
         this.weatherTower.register(this);
-        System.out.println(registerToTowerMessage);
+        Simulator.printwriter.println(registerToTowerMessage);
 	}
 }

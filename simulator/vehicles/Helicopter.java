@@ -14,6 +14,7 @@ package simulator.vehicles;
 
 import simulator.WeatherTower;
 import weather.Coordinates;
+import simulator.Simulator;
 
 public class Helicopter extends Aircraft implements Flyable{
     private WeatherTower weatherTower;
@@ -38,8 +39,8 @@ public class Helicopter extends Aircraft implements Flyable{
             {
                 if (thisCoordinatesTrue)
                 {
-                this.coordinates = new Coordinates(this.coordinates.getLongitude() + 5, this.coordinates.getLatitude(), this.coordinates.getHeight());
-                System.out.println(helicopterMessage + rainMessage);
+                    this.coordinates = new Coordinates(this.coordinates.getLongitude() + 5, this.coordinates.getLatitude(), this.coordinates.getHeight());
+                    Simulator.printwriter.println(helicopterMessage + rainMessage);
                 }
                 break;
             }
@@ -48,7 +49,7 @@ public class Helicopter extends Aircraft implements Flyable{
                 if (thisCoordinatesTrue)
                 {
                     this.coordinates = new Coordinates(this.coordinates.getLongitude() + 1, this.coordinates.getLatitude(), this.coordinates.getHeight());
-                System.out.println(helicopterMessage + fogMessage);
+                    Simulator.printwriter.println(helicopterMessage + fogMessage);
                 }
                 break;
             }
@@ -56,8 +57,8 @@ public class Helicopter extends Aircraft implements Flyable{
             {
                 if (thisCoordinatesTrue)
                 {
-                this.coordinates = new Coordinates(this.coordinates.getLongitude() + 10, this.coordinates.getLatitude(), this.coordinates.getHeight() + 2);
-                System.out.println(helicopterMessage + sunMessage);
+                    this.coordinates = new Coordinates(this.coordinates.getLongitude() + 10, this.coordinates.getLatitude(), this.coordinates.getHeight() + 2);
+                    Simulator.printwriter.println(helicopterMessage + sunMessage);
                 }
                 break;
             }
@@ -65,15 +66,15 @@ public class Helicopter extends Aircraft implements Flyable{
             {
                 if (thisCoordinatesTrue)
                 {
-                this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 12);
-                System.out.println(helicopterMessage + snowMessage);
+                    this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 12);
+                    Simulator.printwriter.println(helicopterMessage + snowMessage);
                 }
                 break;
             }
         }
         if (this.coordinates.getHeight() <= 0)
         {
-            System.out.println(landingMessage);
+            Simulator.printwriter.println(landingMessage);
             this.weatherTower.unregister(this);
         }
     }
@@ -82,6 +83,6 @@ public class Helicopter extends Aircraft implements Flyable{
         String registerToTowerMessage = "Tower says: Helicopter#"+this.name+"("+this.id+") register to weather tower.";
 		this.weatherTower = weatherTower;
         this.weatherTower.register(this);
-        System.out.println(registerToTowerMessage);
+        Simulator.printwriter.println(registerToTowerMessage);
 	}
 }
