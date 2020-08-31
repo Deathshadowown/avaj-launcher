@@ -14,7 +14,7 @@ package simulator.vehicles;
 
 import simulator.WeatherTower;
 import weather.Coordinates;
-import simulator.Simulator;
+import simulator.*;
 
 public class Baloon extends Aircraft implements Flyable{
     private WeatherTower weatherTower = new WeatherTower();
@@ -32,7 +32,6 @@ public class Baloon extends Aircraft implements Flyable{
         String fogMessage = ") Oh dear we in fog everyone start praying we dont hit a skyscraper!!";
         String sunMessage = ") what a breeze today is going to be a great day nice and sunny!";
         String snowMessage = ") This snow is making this hard to fly, hope we dont crash!";
-
         switch(weather)
         {
             case "RAIN":

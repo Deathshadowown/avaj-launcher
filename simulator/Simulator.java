@@ -23,12 +23,12 @@ public class Simulator {
 	public static PrintWriter printwriter = null;
 	public static void main(String[] arg) throws FileNotFoundException {
 		if (arg.length > 1)
-			throw new FileNotFoundException();
-			try {
+		throw new FileNotFoundException();
+		try {
 			File file = new File(arg[0]);
 			boolean exists = file.exists();
 			File simulation = new File("simulation.txt");
-			printwriter = new PrintWriter("simulation.txt");
+			printwriter = new PrintWriter(simulation);
 			if (!exists)
 			{
 				System.out.println("Error: Missing file " + arg[0]);
@@ -88,7 +88,7 @@ public class Simulator {
 				for (int i = simulations; i >= 1; i--) {
 					weatherTower.changeWeather();
 				}
-				Simulator.printwriter.close();
+				printwriter.close();
 			} catch (FileNotFoundException e) {
 				System.out.println("Error: Missing file " + arg[0]);
 			} catch (NumberFormatException e) {

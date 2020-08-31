@@ -1,0 +1,52 @@
+Tower says: Baloon#B1(1) register to weather tower.
+Tower says: Baloon#B2(2) register to weather tower.
+Tower says: JetPlane#J1(3) register to weather tower.
+Tower says: Helicopter#H1(4) register to weather tower.
+Tower says: Helicopter#H2(5) register to weather tower.
+Tower says: Helicopter#H3(6) register to weather tower.
+Tower says: Baloon#B3(7) register to weather tower.
+Tower says: JetPlane#J2(8) register to weather tower.
+Tower says: Helicopter#H4(9) register to weather tower.
+Baloon#B1(1) This snow is making this hard to fly, hope we dont crash!
+Baloon#B2(2) Oh dear we in fog everyone start praying we dont hit a skyscraper!!
+JetPlane#J1(3) Sun this is amazing view to have!!
+Helicopter#H1(4) Snow is here hope the rotor blades dont freeze!
+Helicopter#H2(5) Nice sunny day view is perfect if you look to the right you can see the amazing mountens if you look to your left you can see the stranded people in the life boat, aren't you happy to be here oh well!
+Helicopter#H3(6) Rain so nice aren't you happy you did not take the baloon look at them struggling to stay a float
+Baloon#B3(7) what a breeze today is going to be a great day nice and sunny!
+JetPlane#J2(8) A little bit of rain nevr bothered me, what's a whole lot going to do!
+Helicopter#H4(9) Oh no Fog Keep an eye out for King kong oh noo this is bad!!!
+Baloon#B1(1) This snow is making this hard to fly, hope we dont crash!
+Baloon#B1(1) landing.
+Tower says: Baloon#B1(1) unregistered from weather tower.
+Baloon#B2(2) Oh dear we in fog everyone start praying we dont hit a skyscraper!!
+JetPlane#J1(3) Sun this is amazing view to have!!
+Helicopter#H1(4) Snow is here hope the rotor blades dont freeze!
+Helicopter#H1(4) landing.
+Tower says: Helicopter#H1(4) unregistered from weather tower.
+Helicopter#H2(5) Nice sunny day view is perfect if you look to the right you can see the amazing mountens if you look to your left you can see the stranded people in the life boat, aren't you happy to be here oh well!
+Helicopter#H3(6) Rain so nice aren't you happy you did not take the baloon look at them struggling to stay a float
+Baloon#B3(7) what a breeze today is going to be a great day nice and sunny!
+JetPlane#J2(8) A little bit of rain nevr bothered me, what's a whole lot going to do!
+Helicopter#H4(9) Oh no Fog Keep an eye out for King kong oh noo this is bad!!!
+Baloon#B2(2) Oh dear we in fog everyone start praying we dont hit a skyscraper!!
+JetPlane#J1(3) Sun this is amazing view to have!!
+Helicopter#H2(5) Nice sunny day view is perfect if you look to the right you can see the amazing mountens if you look to your left you can see the stranded people in the life boat, aren't you happy to be here oh well!
+Helicopter#H3(6) Rain so nice aren't you happy you did not take the baloon look at them struggling to stay a float
+Baloon#B3(7) what a breeze today is going to be a great day nice and sunny!
+JetPlane#J2(8) A little bit of rain nevr bothered me, what's a whole lot going to do!
+Helicopter#H4(9) Oh no Fog Keep an eye out for King kong oh noo this is bad!!!
+Baloon#B2(2) Oh dear we in fog everyone start praying we dont hit a skyscraper!!
+JetPlane#J1(3) Sun this is amazing view to have!!
+Helicopter#H2(5) Oh no Fog Keep an eye out for King kong oh noo this is bad!!!
+Helicopter#H3(6) Rain so nice aren't you happy you did not take the baloon look at them struggling to stay a float
+Baloon#B3(7) what a breeze today is going to be a great day nice and sunny!
+JetPlane#J2(8) A little bit of rain nevr bothered me, what's a whole lot going to do!
+Helicopter#H4(9) Oh no Fog Keep an eye out for King kong oh noo this is bad!!!
+Baloon#B2(2) Oh dear we in fog everyone start praying we dont hit a skyscraper!!
+JetPlane#J1(3) Sun this is amazing view to have!!
+Helicopter#H2(5) Oh no Fog Keep an eye out for King kong oh noo this is bad!!!
+Helicopter#H3(6) Rain so nice aren't you happy you did not take the baloon look at them struggling to stay a float
+Baloon#B3(7) Oh dear we in fog everyone start praying we dont hit a skyscraper!!
+JetPlane#J2(8) A little bit of rain nevr bothered me, what's a whole lot going to do!
+Helicopter#H4(9) Oh no Fog Keep an eye out for King kong oh noo this is bad!!!

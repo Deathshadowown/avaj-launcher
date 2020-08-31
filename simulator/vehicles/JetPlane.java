@@ -14,7 +14,7 @@ package simulator.vehicles;
 
 import simulator.WeatherTower;
 import weather.Coordinates;
-import simulator.Simulator;
+import simulator.*;
 
 public class JetPlane extends Aircraft implements Flyable{
     private WeatherTower weatherTower;
