@@ -1,3 +1,6 @@
 javac filename.java to creat run file must be in first dir so javac simulator/filename.java
 
 java filename to run program must be in first dir so java simulator/filename
+
+To run Program
+run runprogram.sh file
